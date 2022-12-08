@@ -1,0 +1,787 @@
+
+9DEEP_SHIKHA@SIA701425SX MINGW64 ~/Code
+$ pipenv run python samlapi_formauth.py 
+samlapi_formauth running...
+Loading account profile data
+Fetching SSO page https://sqauthprod.sq.com.sg/affwebservices/public/saml2sso?SPID=urn:amazon:webservices
+Username:9deep_shikha
+Password: 
+idpauthformsubmiturl https://sqauthprod.sq.com.sg/affwebservices/public/processlogin.jsp
+
+Extracting data from SAML assertion...
+Processing SAML into arns...
+
+Please choose the role you would like to assume:
+
+[1]: sia-auto arn:aws:iam::817929577935:role/SIAAWSCONNECT_CARGO_ADMIN
+[2]: sia-auto arn:aws:iam::817929577935:role/SIAAWSCONNECT_CONNECT_DEVOPS
+[3]: sia-auto arn:aws:iam::817929577935:role/CMC_AWSCONNECT_ADMIN
+[4]: sia-auto arn:aws:iam::817929577935:role/CMC_AWSCONNECT_DEVOPS
+[5]: sia-dev4 arn:aws:iam::187756823879:role/SIAAWSCONNECT_CARGO_CONNECT
+[6]: sia-dev4 arn:aws:iam::187756823879:role/DEMO_APP_CONNECT
+[7]: sia-dev4 arn:aws:iam::187756823879:role/CMC_AWSCONNECT_CONNECT
+[8]: sia-dev4 arn:aws:iam::187756823879:role/CMC_AWS_CONNECT
+[9]: sia-dev4 arn:aws:iam::187756823879:role/SIA_CloudOps
+[10]: sia-dev4 arn:aws:iam::187756823879:role/SIA_DevOps
+[11]: sia-dev4 arn:aws:iam::187756823879:role/ADMIN
+[12]: sia-nonprodauto arn:aws:iam::378888410647:role/SIAAWSCONNECT_CARGO_ADMIN
+[13]: sia-nonprodauto arn:aws:iam::378888410647:role/CMC_AWSCONNECT_CONNECT
+[14]: sia-nonprodauto arn:aws:iam::378888410647:role/CMC_AWSCONNECT_DEVOPS
+[15]: sia-nonprodauto arn:aws:iam::378888410647:role/CMC_AWSCONNECT_ADMIN
+[16]: sia-poc5 arn:aws:iam::631062911682:role/ADMIN
+[17]: sia-prodauto arn:aws:iam::654782598114:role/SIAAWSCONNECT_CARGO_ADMIN
+[18]: sia-prodauto arn:aws:iam::654782598114:role/CMC_AWSCONNECT_CONNECT
+[19]: sia-prodauto arn:aws:iam::654782598114:role/CMC_AWSCONNECT_ADMIN
+[20]: sia-prodauto arn:aws:iam::654782598114:role/CMC_AWSCONNECT_DEVOPS
+
+Selection:11
+Requesting STS credentials for profile_name=sia-dev4, role_arn=arn:aws:iam::187756823879:role/ADMIN
+Writing temp creds to C:\Users\9deep_shikha\.aws\credentials
+
+
+----------------------------------------------------------------
+Your new access key pair has been stored in the AWS configuration file C:\Users\9deep_shikha\.aws\credentials uml profile.
+Note that it will expire at 22:12:38 29/Aug/22 Malay Peninsula Standard Time.
+After this time, you may rerun this script to refresh your access key pair.
+To use this credential, call the AWS CLI with the --profile option (e.g. aws --profile saml ec2 describe-instan
+----------------------------------------------------------------
+
+
+
+9DEEP_SHIKHA@SIA701425SX MINGW64 ~/Code
+$ aws s3 ls
+
+Unable to locate credentials. You can configure credentials by running "aws configure".
+
+9DEEP_SHIKHA@SIA701425SX MINGW64 ~/Code
+$ aws s3 ls --profile=saml
+2022-04-11 14:27:04 amazon-connect-6c51bcb24432
+2021-10-04 11:51:17 amazon-connect-8b9b44353b41
+2021-11-10 16:50:35 amazon-connect-942d2f6901ac
+2022-04-11 16:19:49 amazon-connect-c436e64da8d5
+2022-04-11 14:31:02 amazon-connect-ce3d062ddba4
+2020-01-10 11:09:27 cf-templates-14j545h4nw7jh-ap-southeast-1
+2021-11-09 11:28:17 cmc-awsconnect-dev-connect
+2021-11-09 11:30:13 cmc-awsconnect-dev-interface
+2022-08-08 09:39:13 core-compliance-dev4-elb-accesslogs
+2022-08-08 09:39:18 core-compliance-dev4-s3-accesslogs
+2021-11-02 17:03:36 demo-app-poc-cms-awsconnect-connect
+2021-11-02 17:03:43 demo-app-poc-cms-awsconnect-interface
+2021-11-02 17:03:04 demo-app-poc-cms-awsconnect-user-agent-onboard-list
+2021-10-22 11:27:35 dev-siacmc-connect-187756823879
+2021-10-28 05:53:05 dev-siacmc-deployment-187756823879
+2021-10-23 05:20:40 dev-siacmc-interface-187756823879
+2021-10-22 11:26:44 dev2-siacmc-connect-187756823879
+2021-10-28 05:52:18 dev2-siacmc-deployment-187756823879
+2021-10-23 05:20:19 dev2-siacmc-interface-187756823879
+2020-06-13 03:10:21 elasticbeanstalk-ap-southeast-1-187756823879
+2022-08-29 12:18:18 siaawsconnect-cargo-dev-connect
+
+9DEEP_SHIKHA@SIA701425SX MINGW64 ~/Code
+$ cd Cargo
+bash: cd: Cargo: No such file or directory
+
+9DEEP_SHIKHA@SIA701425SX MINGW64 ~/Code
+$ ls
+aws-extend-switch-roles.txt                                          hello.txt   Pipfile.lock          test.py
+decode.py                                                            output.xml  samlapi_formauth.py*  test2.py
+dev2-siacmc-cms-receive-s3-b5957831-a47d-4f87-98ca-f2049a8e3a74.zip  Pipfile     sia-proxy.sh*         unset-pr
+
+9DEEP_SHIKHA@SIA701425SX MINGW64 ~/Code
+$ cd ../Cargo/
+
+9DEEP_SHIKHA@SIA701425SX MINGW64 ~/Cargo
+$ ls
+ amazon-connect-copy/                Code_cargo/     jq.exe*                videos/
+'Cargo Proposed Scope - DRAFT.pdf'   Connect_code/   siaawsconnect-cargo/
+
+9DEEP_SHIKHA@SIA701425SX MINGW64 ~/Cargo
+$ aws connect list-instances
+
+You must specify a region. You can also configure your region by running "aws configure".
+
+9DEEP_SHIKHA@SIA701425SX MINGW64 ~/Cargo
+$ export AWS_PROFILE=saml
+
+9DEEP_SHIKHA@SIA701425SX MINGW64 ~/Cargo
+$ aws connect list-instances
+{
+    "InstanceSummaryList": [
+        {
+            "Id": "4d1a0282-72b0-4dbf-b472-b9ffea1507eb",
+            "Arn": "arn:aws:connect:ap-southeast-1:187756823879:instance/4d1a0282-72b0-4dbf-b472-b9ffea1507eb",
+            "IdentityManagementType": "SAML",
+            "InstanceAlias": "dev-siacmc-connect",
+            "CreatedTime": "2021-09-08T16:16:00+08:00",
+            "ServiceRole": "arn:aws:iam::187756823879:role/aws-service-role/connect.amazonaws.com/AWSServiceRolonnect_vbm7Nwqhz30gW5xzBvlb",
+            "InstanceStatus": "ACTIVE",
+            "InboundCallsEnabled": true,
+            "OutboundCallsEnabled": true
+        },
+        {
+            "Id": "85ca0375-18c8-4fac-895f-aa23e418c899",
+            "Arn": "arn:aws:connect:ap-southeast-1:187756823879:instance/85ca0375-18c8-4fac-895f-aa23e418c899",
+            "IdentityManagementType": "SAML",
+            "InstanceAlias": "demo-app-connect",
+            "CreatedTime": "2022-04-11T16:18:49+08:00",
+            "ServiceRole": "arn:aws:iam::187756823879:role/aws-service-role/connect.amazonaws.com/AWSServiceRolonnect_Qq2VFHzJ4UhixSpKzR2e",
+            "InstanceStatus": "ACTIVE",
+            "InboundCallsEnabled": true,
+            "OutboundCallsEnabled": true
+        },
+        {
+            "Id": "95e1bfdc-1464-4edf-8028-26a53885cd19",
+            "Arn": "arn:aws:connect:ap-southeast-1:187756823879:instance/95e1bfdc-1464-4edf-8028-26a53885cd19",
+            "IdentityManagementType": "SAML",
+            "InstanceAlias": "cmc-awsconnect-dev",
+            "CreatedTime": "2021-10-18T10:40:16+08:00",
+            "ServiceRole": "arn:aws:iam::187756823879:role/aws-service-role/connect.amazonaws.com/AWSServiceRolonnect_gGQeXUhslKgrKjYQ4Pf4",
+            "InstanceStatus": "ACTIVE",
+            "InboundCallsEnabled": true,
+            "OutboundCallsEnabled": true
+        },
+        {
+            "Id": "e0fe99ba-1dcb-40d5-bef5-60a6c248fa64",
+            "Arn": "arn:aws:connect:ap-southeast-1:187756823879:instance/e0fe99ba-1dcb-40d5-bef5-60a6c248fa64",
+            "IdentityManagementType": "CONNECT_MANAGED",
+            "InstanceAlias": "dev2-siacmc-connect",
+            "CreatedTime": "2021-09-23T13:21:33+08:00",
+            "ServiceRole": "arn:aws:iam::187756823879:role/aws-service-role/connect.amazonaws.com/AWSServiceRolonnect_czNZeL1OHywR6W8uvEC4",
+            "InstanceStatus": "ACTIVE",
+            "InboundCallsEnabled": true,
+            "OutboundCallsEnabled": true
+        },
+        {
+            "Id": "ec7cb86d-22c7-4ed0-875b-df6ef1a828de",
+            "Arn": "arn:aws:connect:ap-southeast-1:187756823879:instance/ec7cb86d-22c7-4ed0-875b-df6ef1a828de",
+            "IdentityManagementType": "SAML",
+            "InstanceAlias": "siaawsconnect-cargo-dev",
+            "CreatedTime": "2022-08-11T11:42:03+08:00",
+            "ServiceRole": "arn:aws:iam::187756823879:role/aws-service-role/connect.amazonaws.com/AWSServiceRolonnect_XdHInSJV8CpaHf4qZZjK",
+            "InstanceStatus": "ACTIVE",
+            "InboundCallsEnabled": true,
+            "OutboundCallsEnabled": true
+        }
+    ]
+}
+
+9DEEP_SHIKHA@SIA701425SX MINGW64 ~/Cargo
+$ aws connect list-instances| jq .InstanceSummaryList[]
+{
+  "Id": "4d1a0282-72b0-4dbf-b472-b9ffea1507eb",
+  "Arn": "arn:aws:connect:ap-southeast-1:187756823879:instance/4d1a0282-72b0-4dbf-b472-b9ffea1507eb",
+  "IdentityManagementType": "SAML",
+  "InstanceAlias": "dev-siacmc-connect",
+  "CreatedTime": "2021-09-08T16:16:00+08:00",
+  "ServiceRole": "arn:aws:iam::187756823879:role/aws-service-role/connect.amazonaws.com/AWSServiceRoleForAmazon7Nwqhz30gW5xzBvlb",
+  "InstanceStatus": "ACTIVE",
+  "InboundCallsEnabled": true,
+  "OutboundCallsEnabled": true
+}
+{
+  "Id": "85ca0375-18c8-4fac-895f-aa23e418c899",
+  "Arn": "arn:aws:connect:ap-southeast-1:187756823879:instance/85ca0375-18c8-4fac-895f-aa23e418c899",
+  "IdentityManagementType": "SAML",
+  "InstanceAlias": "demo-app-connect",
+  "CreatedTime": "2022-04-11T16:18:49+08:00",
+  "ServiceRole": "arn:aws:iam::187756823879:role/aws-service-role/connect.amazonaws.com/AWSServiceRoleForAmazonVFHzJ4UhixSpKzR2e",
+  "InstanceStatus": "ACTIVE",
+  "InboundCallsEnabled": true,
+  "OutboundCallsEnabled": true
+}
+{
+  "Id": "95e1bfdc-1464-4edf-8028-26a53885cd19",
+  "Arn": "arn:aws:connect:ap-southeast-1:187756823879:instance/95e1bfdc-1464-4edf-8028-26a53885cd19",
+  "IdentityManagementType": "SAML",
+  "InstanceAlias": "cmc-awsconnect-dev",
+  "CreatedTime": "2021-10-18T10:40:16+08:00",
+  "ServiceRole": "arn:aws:iam::187756823879:role/aws-service-role/connect.amazonaws.com/AWSServiceRoleForAmazoneXUhslKgrKjYQ4Pf4",
+  "InstanceStatus": "ACTIVE",
+  "InboundCallsEnabled": true,
+  "OutboundCallsEnabled": true
+}
+{
+  "Id": "e0fe99ba-1dcb-40d5-bef5-60a6c248fa64",
+  "Arn": "arn:aws:connect:ap-southeast-1:187756823879:instance/e0fe99ba-1dcb-40d5-bef5-60a6c248fa64",
+  "IdentityManagementType": "CONNECT_MANAGED",
+  "InstanceAlias": "dev2-siacmc-connect",
+  "CreatedTime": "2021-09-23T13:21:33+08:00",
+  "ServiceRole": "arn:aws:iam::187756823879:role/aws-service-role/connect.amazonaws.com/AWSServiceRoleForAmazonZeL1OHywR6W8uvEC4",
+  "InstanceStatus": "ACTIVE",
+  "InboundCallsEnabled": true,
+  "OutboundCallsEnabled": true
+}
+{
+  "Id": "ec7cb86d-22c7-4ed0-875b-df6ef1a828de",
+  "Arn": "arn:aws:connect:ap-southeast-1:187756823879:instance/ec7cb86d-22c7-4ed0-875b-df6ef1a828de",
+  "IdentityManagementType": "SAML",
+  "InstanceAlias": "siaawsconnect-cargo-dev",
+  "CreatedTime": "2022-08-11T11:42:03+08:00",
+  "ServiceRole": "arn:aws:iam::187756823879:role/aws-service-role/connect.amazonaws.com/AWSServiceRoleForAmazonInSJV8CpaHf4qZZjK",
+  "InstanceStatus": "ACTIVE",
+  "InboundCallsEnabled": true,
+  "OutboundCallsEnabled": true
+}
+
+9DEEP_SHIKHA@SIA701425SX MINGW64 ~/Cargo
+$ aws connect list-instances| jq .InstanceSummaryList[].InstanceAlias
+"dev-siacmc-connect"
+"demo-app-connect"
+"cmc-awsconnect-dev"
+"dev2-siacmc-connect"
+"siaawsconnect-cargo-dev"
+
+9DEEP_SHIKHA@SIA701425SX MINGW64 ~/Cargo
+$ ls
+ amazon-connect-copy/                Code_cargo/     jq.exe*                videos/
+'Cargo Proposed Scope - DRAFT.pdf'   Connect_code/   siaawsconnect-cargo/
+
+9DEEP_SHIKHA@SIA701425SX MINGW64 ~/Cargo
+$ connect_save 
+Usage: connect_save [-?fsev] [-p aws_profile] [-c contact_flow_prefix] [-G ignore_prefix] instance_alias
+    Retrieve components from an Amazon Connect instance into plain files
+
+    instance_alias          Alias of the Connect instance (or path to the directory to save, with the alias beiname)
+    -f                      Force removal of existing instance_alias directory
+    -s                      Skip unpublished contact flow modules and contact flows with an error (instead of f
+    -e                      Proceed even when the system may not encode Extended ASCII characters properly
+    -v                      Show version of this script
+    -p profile              AWS Profile to use
+    -c contact_flow_prefix  Prefix of Contact Flows and Modules to be copied (all others will be ignored) - Def
+copy all
+    -G ignore_prefix        Ignore hours, queues, routing profiles, flows or modules with names prefixed with ix
+    -C codepage             Override the auto-detected codepage (e.g., use '-C CP1252' for Gitbash ANSI if expecoding issues)
+    -?                      Help
+
+9DEEP_SHIKHA@SIA701425SX MINGW64 ~/Cargo
+$ connect_save -f -c SIA siaawsconnect-cargo-dev
+Instance Alias: siaawsconnect-cargo-dev (in directory "siaawsconnect-cargo-dev")
+AWS Profile: saml
+Contact Flow Prefix: SIA
+Instance ID: ec7cb86d-22c7-4ed0-875b-df6ef1a828de
+
+7 prompts listed in "siaawsconnect-cargo-dev/prompts.json"
+
+1 hours of operations listed in "siaawsconnect-cargo-dev/hours.json"
+Exporting hours of operation Basic Hours
+
+1 queues listed in "siaawsconnect-cargo-dev/queues.json"
+Exporting queue BasicQueue
+
+1 routing profiles listed in "siaawsconnect-cargo-dev/routings.json"
+Exporting routing profile Basic Routing Profile
+
+0 contact flow modules listed in "siaawsconnect-cargo-dev/modules.json" with names prefixed with "SIA" or Defau
+
+8 contact flows listed in "siaawsconnect-cargo-dev/flows.json" with names prefixed with "SIA" or Default
+Exporting contact flow Default agent hold
+Exporting contact flow Default agent transfer
+Exporting contact flow Default agent whisper
+Exporting contact flow Default customer hold
+Exporting contact flow Default customer queue
+Exporting contact flow Default customer whisper
+Exporting contact flow Default outbound
+Exporting contact flow Default queue transfer
+
+All done  
+
+
+9DEEP_SHIKHA@SIA701425SX MINGW64 ~/Cargo
+$ connect_diff
+Usage: connect_diff [-?fev] [-l lambda_prefix_a=lambda_prefix_b] [-b lex_bot_prefix_a=lex_bot_prefix_b] instancnstance_alias_b helper
+    Based on connect_save result on Amazon Connect instance A and B,
+    find the differences and produce helper files to safely copy components from A to B.
+
+    instance_alias_a    Alias of the Connect instance A
+    instance_alias_b    Alias of the Connect instance B
+                        (Aliases can be a path to the directory where the instance was saved using connect_save
+    helper              Name of the helper directory
+    -f                  Force removal of existing helper directory
+    -e                  Proceed even when the system may not encode Extended ASCII characters properly
+    -v                  Show version of this script
+    -l lambda_prefix_a=lambda_prefix_b
+                        Lambda function name prefixes for instances A and B (if different) to be replaced durin
+    -b lex_bot_prefix_a=lex_bot_prefix_b
+                        Lex bot (Classic) name prefixes for instances A and B (if different) to be replaced dur    -?                  Help
+
+    Note: This script create files in the helper directory without changing any instance component files.
+
+9DEEP_SHIKHA@SIA701425SX MINGW64 ~/Cargo
+$ connect_diff -f
+Usage: connect_diff [-?fev] [-l lambda_prefix_a=lambda_prefix_b] [-b lex_bot_prefix_a=lex_bot_prefix_b] instancnstance_alias_b helper
+    Based on connect_save result on Amazon Connect instance A and B,
+    instance_alias_a    Alias of the Connect instance A
+    instance_alias_b    Alias of the Connect instance B
+                        (Aliases can be a path to the directory where the instance was saved using connect_save.)
+    helper              Name of the helper directory
+    -f                  Force removal of existing helper directory
+    -e                  Proceed even when the system may not encode Extended ASCII characters properly
+    -v                  Show version of this script
+    -l lambda_prefix_a=lambda_prefix_b
+                        Lambda function name prefixes for instances A and B (if different) to be replaced during copying
+    -b lex_bot_prefix_a=lex_bot_prefix_b
+                        Lex bot (Classic) name prefixes for instances A and B (if different) to be replaced during copying    -?                  Help
+
+    Note: This script create files in the helper directory without changing any instance component files.      
+
+9DEEP_SHIKHA@SIA701425SX MINGW64 ~/Cargo
+$ connect_diff -f siaawsconnect-cargo
+siaawsconnect-cargo/         siaawsconnect-cargo-dev/     siaawsconnect-cargo-dev.log
+
+9DEEP_SHIKHA@SIA701425SX MINGW64 ~/Cargo
+$ connect_diff -f Connect_code/sia-cargo-demo siaawsconnect-cargo-dev helper
+Instance Alias A: sia-cargo-demo (in directory "Connect_code/sia-cargo-demo")
+Instance Alias B: siaawsconnect-cargo-dev (in directory "siaawsconnect-cargo-dev")
+Helper: helper
+instance_alias_a="sia-cargo-demo"
+instance_alias_dir_a="Connect_code/sia-cargo-demo"
+instance_alias_b="siaawsconnect-cargo-dev"
+instance_alias_dir_b="siaawsconnect-cargo-dev"
+instance_id_a="35054040-00c6-48a7-8658-1ff6310d37e4"
+instance_arn_a="arn:aws:connect:ap-southeast-1:785828657109:instance/35054040-00c6-48a7-8658-1ff6310d37e4"
+region_a="ap-southeast-1"
+aws_ac_a="785828657109"
+aws_profile_a=""
+lambda_prefix_a=""
+lex_bot_prefix_a=""
+instance_id_b="ec7cb86d-22c7-4ed0-875b-df6ef1a828de"
+instance_arn_b="arn:aws:connect:ap-southeast-1:187756823879:instance/ec7cb86d-22c7-4ed0-875b-df6ef1a828de"
+region_b="ap-southeast-1"
+aws_ac_b="187756823879"
+aws_profile_b=""
+lambda_prefix_b=""
+lex_bot_prefix_b=""
+contact_flow_prefix="SIA"
+
+Checking Prompts ...
+Checking Hours of operations ...
+Checking Queues ...
+Checking Routing Profiles ...
+Checking Contact Flow Modules ...
+Checking Contact Flows ...
+
+These helper files are created:
+helper/helper.var: About the source and target Amazon Connect instances
+helper/helper.new: Components to add to "siaawsconnect-cargo-dev"
+helper/helper.old: Components to update for "siaawsconnect-cargo-dev" based on "Connect_code/sia-cargo-demo"   
+helper/helper.sed: SED script used to update components
+helper/flow_template.json: Contact Flow template json
+
+All done
+
+9DEEP_SHIKHA@SIA701425SX MINGW64 ~/Cargo
+$ connect_copy 
+Usage: connect_copy [-?dev] helper
+    Copy Amazon Connect instance A to instance B safely, based on the
+    connect_save and connect_diff results, under the helper directory
+    creating new components in helper.new, updating old components in helper.old,
+    and updating references defined in helper.sed.
+
+    helper  Name of the helper directory
+    -d      Dry run - Run through the script but not updating the target instance
+    -e      Proceed even when the system may not encode Extended ASCII characters properly
+    -v      Show version of this script
+    -?      Help
+
+9DEEP_SHIKHA@SIA701425SX MINGW64 ~/Cargo
+$ connect_copy helper
+Instance Alias A: sia-cargo-demo (in directory "Connect_code/sia-cargo-demo")
+Instance Alias B: siaawsconnect-cargo-dev (in directory "siaawsconnect-cargo-dev")
+Helper Directory: helper
+AWS Profile B in use: saml
+Context Flow Prefix: SIA
+
+Prompts
+-------
+All prompts in the source instance exist in the target instance.
+
+Hours of operations
+-------------------
+No hours of operations to create
+
+Checking 1 hours of operations for an update
+1. hour_Basic%20Hours.json ... changed
+Updating hour_Basic%20Hours.json
+
+Queues
+------
+
+Creating 2 queues
+1. queue_SIA%20Customer%20Services.json
+2. queue_SIA%20Reservation.json
+
+Checking 1 queues for an update
+1. queue_BasicQueue.json ... same
+
+Routing Profiles
+----------------
+
+Creating 2 routing profiles
+1. routing_SIA%20Customer%20Services.json
+2. routing_SIA%20Reservation.json
+
+Checking 2 routing profiles for an update
+1. routing_SIA%20Customer%20Services.json ... same
+2. routing_SIA%20Reservation.json ... same
+
+Contact Flow Modules Creation
+-----------------------------
+No contact flow modules with names prefixed with "SIA" to create
+
+Contact Flow Modules Update
+---------------------------
+No contact flow modules to update
+
+Contact Flows Creation
+----------------------
+
+Creating 5 contact flows with names prefixed with "SIA"
+1. flow_SIA-%20Customer%20Service.json
+2. flow_SIA-%20Reservation.json
+3. flow_SIA-Cargo_Main.json
+4. flow_SIA-Cargo-emergency-main.json
+5. flow_SIA-Emergency.json
+
+Contact Flows Update
+--------------------
+
+Checking 5 contact flows with names prefixed with "SIA" for an update
+1. flow_SIA-%20Customer%20Service.json ... changed
+2. flow_SIA-%20Reservation.json ... changed
+3. flow_SIA-Cargo_Main.json ... changed
+4. flow_SIA-Cargo-emergency-main.json ... changed
+5. flow_SIA-Emergency.json ... changed
+
+15 actions on the target instance
+
+The AWS CLI commands carrying out such actions can be found in: helper.log
+
+All done
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+9DEEP_SHIKHA@SIA701425SX MINGW64 ~/Cargo
+aws connect list-phone-numbers --instance-id ec7cb86d-22c7-4ed0-875b-df6ef1a828de --profile=saml
+9DEEP_SHIKHA@SIA701425SX MINGW64 ~/Code
+$ aws connect list-phone-numbers --instance-id ec7cb86d-22c7-4ed0-875b-df6ef1a828de --profile=saml
+{
+    "PhoneNumberSummaryList": [
+        {
+            "Id": "b97aac80-c19a-4d63-903d-d747f0294532",
+            "Arn": "arn:aws:connect:ap-southeast-1:187756823879:instance/ec7cb86d-22c7-4ed0-875b-df6ef1a828de/phone-number/b97aac80-c19a-4d63-903d-d747f0294532",
+            "PhoneNumber": "+6560162668",
+            "PhoneNumberType": "DID",
+            "PhoneNumberCountryCode": "SG"
+        },
+        {
+            "Id": "dd176b4b-9871-4424-9f38-0fabd93e3f0d",
+            "Arn": "arn:aws:connect:ap-southeast-1:187756823879:instance/ec7cb86d-22c7-4ed0-875b-df6ef1a828de/phone-number/dd176b4b-9871-4424-9f38-0fabd93e3f0d",
+            "PhoneNumber": "+611800320827",
+            "PhoneNumberType": "TOLL_FREE",
+            "PhoneNumberCountryCode": "AU"
+        }
+    ]
+}
+export AWS_PROFILE=saml
+aws connect list-instances
+connect_save -f -c SIA siaawsconnect-cargo-dev
+connect_diff -f Connect_code/sia-cargo-demo TestConnectSave/siaawsconnect-cargo-dev helper
+history
+#####################################################################################
+$ aws connect list-phone-numbers --instance-id ec7cb86d-22c7-4ed0-875b-df6ef1a828de --profile=saml
+{
+    "PhoneNumberSummaryList": [
+        {
+            "Id": "70a16c0c-5bff-447a-969a-2eeaabf2071d",
+            "Arn": "arn:aws:connect:ap-southeast-1:187756823879:instance/ec7cb86d-22c7-4ed0-875b-df6ef1a828de/phone-number/70a16c0c-5bff-447a-969a-2eeaabf2071d",
+            "PhoneNumber": "+6560184405",
+            "PhoneNumberType": "DID",
+            "PhoneNumberCountryCode": "SG"
+        },
+        {
+            "Id": "c146f65d-dce2-444c-b146-1565c3803b3b",
+            "Arn": "arn:aws:connect:ap-southeast-1:187756823879:instance/ec7cb86d-22c7-4ed0-875b-df6ef1a828de/phone-number/c146f65d-dce2-444c-b146-1565c3803b3b",
+            "PhoneNumber": "+6560184406",
+            "PhoneNumberType": "DID",
+
+
+
+
+##############################################################################################################
+
+###############################################################################################################
+9DEEP_SHIKHA@SIA701425SX MINGW64 ~/CMFBCP/cmfbcp
+$ connect_copy -d helper
+Dry Run
+Instance Alias A: siaawsconnect-cargo-dev (in directory "siaawsconnect-cargo-dev")
+Instance Alias B: siaawsconnect-cmfbcp-dev (in directory "siaawsconnect-cmfbcp-dev")
+Helper Directory: helper
+AWS Profile B in use: saml
+Context Flow Prefix: SIA
+
+Prompts
+-------
+All prompts in the source instance exist in the target instance.
+
+Hours of operations
+-------------------
+No hours of operations to create
+
+Checking 2 hours of operations for an update
+1. hour_Basic%20Hours.json ... same
+2. hour_Working%20Hours.json ... same
+
+Queues
+------
+No queues to create
+
+Checking 3 queues for an update
+1. queue_BasicQueue.json ... same
+2. queue_SIA%20Customer%20Services.json ... same
+3. queue_SIA%20Reservation.json ... same
+
+Routing Profiles
+----------------
+
+Creating 4 routing profiles
+1. routing_CustomerService%20and%20Reservation.json
+Dry-create routing profile
+{
+  "InstanceId": "a6f25c41-9caf-4f12-9a2f-04a1a657e7de",
+  "Name": "CustomerService and Reservation",
+  "Description": "CustomerService and Reservation",
+  "MediaConcurrencies": [
+    {
+      "Channel": "VOICE",
+      "Concurrency": 1
+    }
+  ],
+  "DefaultOutboundQueueId": "480c75ad-f854-41f8-a06a-c7563497e831",
+  "Tags": {},
+  "NumberOfAssociatedQueues": 2,
+  "NumberOfAssociatedUsers": 1,
+  "QueueConfigs": [
+    {
+      "QueueReference": {
+        "QueueId": "480c75ad-f854-41f8-a06a-c7563497e831",
+        "Channel": "VOICE"
+      },
+      "Priority": 1,
+      "Delay": 0
+    },
+    {
+      "QueueReference": {
+        "QueueId": "0da0eb5c-e21c-4859-85a3-a95329c5c325",
+        "Channel": "VOICE"
+      },
+      "Priority": 1,
+      "Delay": 0
+    }
+  ]
+}
+
+2. routing_SIA%20Customer%20Services.json
+Dry-create routing profile
+{
+  "InstanceId": "a6f25c41-9caf-4f12-9a2f-04a1a657e7de",
+  "Name": "SIA Customer Services",
+  "Description": "SIA Customer Services",
+  "MediaConcurrencies": [
+    {
+      "Channel": "VOICE",
+      "Concurrency": 1
+    }
+  ],
+  "DefaultOutboundQueueId": "480c75ad-f854-41f8-a06a-c7563497e831",
+  "Tags": {},
+  "NumberOfAssociatedQueues": 1,
+  "NumberOfAssociatedUsers": 2,
+  "QueueConfigs": [
+    {
+      "QueueReference": {
+        "QueueId": "480c75ad-f854-41f8-a06a-c7563497e831",
+        "Channel": "VOICE"
+      },
+      "Priority": 1,
+      "Delay": 0
+    }
+  ]
+}
+
+3. routing_SIA%20Reservation.json
+Dry-create routing profile
+{
+  "InstanceId": "a6f25c41-9caf-4f12-9a2f-04a1a657e7de",
+  "Name": "SIA Reservation",
+  "Description": "SIA Reservation",
+  "MediaConcurrencies": [
+    {
+      "Channel": "VOICE",
+      "Concurrency": 1
+    }
+  ],
+  "DefaultOutboundQueueId": "0da0eb5c-e21c-4859-85a3-a95329c5c325",
+  "Tags": {},
+  "NumberOfAssociatedQueues": 1,
+  "NumberOfAssociatedUsers": 2,
+  "QueueConfigs": [
+    {
+      "QueueReference": {
+        "QueueId": "0da0eb5c-e21c-4859-85a3-a95329c5c325",
+        "Channel": "VOICE"
+      },
+      "Priority": 1,
+      "Delay": 0
+    }
+  ]
+}
+
+4. routing_Supervisor%20Routing%20Profile.json
+Dry-create routing profile
+{
+  "InstanceId": "a6f25c41-9caf-4f12-9a2f-04a1a657e7de",
+  "Name": "Supervisor Routing Profile",
+  "Description": "Supervisor Routing Profile",
+  "MediaConcurrencies": [
+    {
+      "Channel": "VOICE",
+      "Concurrency": 1
+    }
+  ],
+  "DefaultOutboundQueueId": "480c75ad-f854-41f8-a06a-c7563497e831",
+  "Tags": {},
+  "NumberOfAssociatedQueues": 1,
+  "NumberOfAssociatedUsers": 0,
+  "QueueConfigs": [
+    {
+      "QueueReference": {
+        "QueueId": "fb6aeb31-72ee-4ec5-be4a-2c89dd9cf998",
+        "Channel": "VOICE"
+      },
+      "Priority": 1,
+      "Delay": 0
+    }
+  ]
+}
+
+No routing profiles to update
+
+Contact Flow Modules Creation
+-----------------------------
+No contact flow modules with names prefixed with "SIA" to create
+
+Contact Flow Modules Update
+---------------------------
+No contact flow modules to update
+
+Contact Flows Creation
+----------------------
+
+Creating 7 contact flows with names prefixed with "SIA"
+1. flow_SIA-%20Customer%20Service.json
+Dry-create contact flow from Template (Default flows)
+--instance-id a6f25c41-9caf-4f12-9a2f-04a1a657e7de
+--name "SIA- Customer Service"
+--type CONTACT_FLOW
+
+2. flow_SIA-%20Reservation.json
+Dry-create contact flow from Template (Default flows)
+--instance-id a6f25c41-9caf-4f12-9a2f-04a1a657e7de
+--name "SIA- Reservation"
+--type CONTACT_FLOW
+
+3. flow_SIA-Cargo_Main.json
+Dry-create contact flow from Template (Default flows)
+--instance-id a6f25c41-9caf-4f12-9a2f-04a1a657e7de
+--name "SIA-Cargo_Main"
+--type CONTACT_FLOW
+
+4. flow_SIA-Customer_Q.json
+Dry-create contact flow from Template (Default flows)
+--instance-id a6f25c41-9caf-4f12-9a2f-04a1a657e7de
+--name "SIA-Customer_Q"
+--type CUSTOMER_QUEUE
+
+5. flow_SIA-Emergency.json
+Dry-create contact flow from Template (Default flows)
+--instance-id a6f25c41-9caf-4f12-9a2f-04a1a657e7de
+--name "SIA-Emergency"
+--type CONTACT_FLOW
+
+6. flow_SIA-Holiday.json
+Dry-create contact flow from Template (Default flows)
+--instance-id a6f25c41-9caf-4f12-9a2f-04a1a657e7de
+--name "SIA-Holiday"
+--type CONTACT_FLOW
+
+7. flow_SIA-Outbound-Whisper.json
+Dry-create contact flow from Template (Default flows)
+--instance-id a6f25c41-9caf-4f12-9a2f-04a1a657e7de
+--name "SIA-Outbound-Whisper"
+--type OUTBOUND_WHISPER
+
+
+Contact Flows Update
+--------------------
+No contact flows to update
+
+11 actions on the target instance
+
+The AWS CLI commands carrying out such actions can be found in: helper.log
+
+No actions were carried out in Dry-run mode
+
+9DEEP_SHIKHA@SIA701425SX MINGW64 ~/CMFBCP/cmfbcp
+$ connect_copy helper
+Instance Alias A: siaawsconnect-cargo-dev (in directory "siaawsconnect-cargo-dev")  
+Instance Alias B: siaawsconnect-cmfbcp-dev (in directory "siaawsconnect-cmfbcp-dev")
+Helper Directory: helper
+AWS Profile B in use: saml
+Context Flow Prefix: SIA
+
+Prompts
+-------
+All prompts in the source instance exist in the target instance.
+
+Hours of operations
+-------------------
+No hours of operations to create
+
+Checking 2 hours of operations for an update
+1. hour_Basic%20Hours.json ... same
+2. hour_Working%20Hours.json ... same
+
+Queues
+------
+No queues to create
+
+Checking 3 queues for an update
+1. queue_BasicQueue.json ... same
+2. queue_SIA%20Customer%20Services.json ... same
+3. queue_SIA%20Reservation.json ... same
+
+Routing Profiles
+----------------
+
+Creating 4 routing profiles
+1. routing_CustomerService%20and%20Reservation.json
+
+Parameter validation failed:
+Unknown parameter in input: "NumberOfAssociatedQueues", must be one of: InstanceId, Name, Description, DefaultOutboundQueueId, QueueConfigs, MediaConcurrencies, Tags
+Unknown parameter in input: "NumberOfAssociatedUsers", must be one of: InstanceId, Name, Description, DefaultOutboundQueueId, QueueConfigs, MediaConcurrencies, Tags
+
+Error at line 603. Recommended actions:
+Make sure all required prompts exist in the target instance, and
+Install the latest AWS CLI: https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html .
+Error: 
+###############################################################
+
+  pipenv run python samlapi_formauth.py
+  cd ../CMFBCP/amazon-connect-copy/07122022/
+  export AWS_PROFILE=saml
+  
+  connect_save -f -c SIA siaawsconnect-cmfbcp-nonprod
+  connect_diff -f siaawsconnect-cmfbcp-dev siaawsconnect-cmfbcp-nonprod helper
+  connect_save -f -c SIA siaawsconnect-cmfbcp-master
+  connect_diff -f siaawsconnect-cmfbcp-nonprod siaawsconnect-cmfbcp-master helper
+  connect_copy -d helper  ---> dryrun
+  connect_copy helper
